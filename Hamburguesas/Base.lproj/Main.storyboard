@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hamburguesas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="País" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RP-F9-DBd">
+                                <rect key="frame" x="281" y="155" width="36.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hamburguesa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4P-se-Rr4">
+                                <rect key="frame" x="239" y="289" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwM-HH-vdt">
+                                <rect key="frame" x="188" y="421" width="224" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="7bG-iF-Pq2"/>
+                                    <constraint firstAttribute="width" constant="190" id="SaM-Aw-g6G"/>
+                                    <constraint firstAttribute="height" constant="25" id="VrV-De-FeP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Quiero una hamburguesa!"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SaM-Aw-g6G"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="quieroHamburguesa" destination="BYZ-38-t0r" eventType="touchUpInside" id="A6d-x2-0s3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7RP-F9-DBd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-134.5" id="0lL-fN-du2"/>
+                            <constraint firstItem="PwM-HH-vdt" firstAttribute="centerX" secondItem="7RP-F9-DBd" secondAttribute="centerX" constant="0.25" id="2hU-yy-5Mi"/>
+                            <constraint firstItem="PwM-HH-vdt" firstAttribute="centerX" secondItem="o4P-se-Rr4" secondAttribute="centerX" constant="0.25" id="8Zy-Ut-1JE"/>
+                            <constraint firstItem="PwM-HH-vdt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CR7-An-NM1"/>
+                            <constraint firstItem="PwM-HH-vdt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="133.5" id="NMb-XK-Ng5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PwM-HH-vdt" secondAttribute="bottom" constant="154" id="URB-6V-W8k"/>
+                            <constraint firstItem="o4P-se-Rr4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jRQ-2Y-Qm4"/>
+                            <constraint firstItem="7RP-F9-DBd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="135" id="vXF-QT-elS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hamburguesa" destination="o4P-se-Rr4" id="Qo3-1j-I82"/>
+                        <outlet property="país" destination="7RP-F9-DBd" id="2MD-b3-6uG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="355" y="307"/>
         </scene>
     </scenes>
 </document>
